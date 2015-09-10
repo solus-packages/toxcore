@@ -1,0 +1,23 @@
+name       : toxcore
+version    : 3496
+release    : 1
+source     :
+    - http://stroblindustries.com/solus-tarballs/toxcore-3496.tar.bz2 : 570ff00b1fd85c892a1434f2dfb69ff7bafd1cc2f9f8b1c85fe1ee5357d1cca0
+license    : GPL-3.0
+summary    : toxcore is the core library for Tox communication clients.
+description: |
+    toxcore is the core library for Tox communication clients.
+builddeps  :
+    - pkgconfig(libconfig)
+    - pkgconfig(libsodium)
+    - pkgconfig(opus)
+    - pkgconfig(vpx)
+libsplit : no
+setup      : |
+    cp README.md README
+    autoreconf -i
+    %configure --disable-static --enable-daemon
+build      : |
+    %make
+install    : |
+    %make_install
