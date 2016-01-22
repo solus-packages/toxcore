@@ -1,8 +1,8 @@
 name       : toxcore
-version    : 3513
-release    : 4
+version    : 3697
+release    : 5
 source     :
-    - http://stroblindustries.com/solus-tarballs/toxcore-3513.tar.bz2 : 1b1d8530a33ef37a4546bd8f3e3903d95065744f8fe1d81ac8457cfd062ad367
+    - http://stroblindustries.com/solus-tarballs/toxcore-3697.tar.xz : 9e71497e87af0dc53843ad51434198a1281f7a5fb57f205af5b15b1707dc4e89
 license    : GPL-3.0
 summary    : toxcore is the core library for Tox communication clients.
 description: |

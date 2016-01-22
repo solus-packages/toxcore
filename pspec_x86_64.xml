@@ -38,9 +38,9 @@
         </Files>
     </Package>
     <History>
-        <Update release="4">
-            <Date>2015-11-12</Date>
-            <Version>3513</Version>
+        <Update release="5">
+            <Date>2016-01-22</Date>
+            <Version>3697</Version>
             <Comment>Packaging update</Comment>
             <Name>Joshua Strobl</Name>
             <Email>joshua.strobl@outlook.com</Email>
