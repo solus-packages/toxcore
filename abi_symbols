@@ -118,6 +118,7 @@ libtoxcore.so.1:addr_parse_ip
 libtoxcore.so.1:addr_resolve
 libtoxcore.so.1:addr_resolve_or_parse_ip
 libtoxcore.so.1:addto_lists
+libtoxcore.so.1:bind_to_port
 libtoxcore.so.1:bs_list_add
 libtoxcore.so.1:bs_list_find
 libtoxcore.so.1:bs_list_free
@@ -314,6 +315,15 @@ libtoxcore.so.1:messenger_run_interval
 libtoxcore.so.1:messenger_save
 libtoxcore.so.1:messenger_size
 libtoxcore.so.1:nc_dht_pk_callback
+libtoxcore.so.1:net_connect
+libtoxcore.so.1:net_freeipport
+libtoxcore.so.1:net_getipport
+libtoxcore.so.1:net_htonl
+libtoxcore.so.1:net_htons
+libtoxcore.so.1:net_ntohl
+libtoxcore.so.1:net_ntohs
+libtoxcore.so.1:net_sendto_ip4
+libtoxcore.so.1:net_socket
 libtoxcore.so.1:networking_at_startup
 libtoxcore.so.1:networking_poll
 libtoxcore.so.1:networking_registerhandler
