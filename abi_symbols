@@ -584,9 +584,12 @@ libtoxencryptsave.so.1:tox_get_salt
 libtoxencryptsave.so.1:tox_is_data_encrypted
 libtoxencryptsave.so.1:tox_pass_decrypt
 libtoxencryptsave.so.1:tox_pass_encrypt
+libtoxencryptsave.so.1:tox_pass_encryption_extra_length
 libtoxencryptsave.so.1:tox_pass_key_decrypt
 libtoxencryptsave.so.1:tox_pass_key_derive
 libtoxencryptsave.so.1:tox_pass_key_derive_with_salt
 libtoxencryptsave.so.1:tox_pass_key_encrypt
 libtoxencryptsave.so.1:tox_pass_key_free
+libtoxencryptsave.so.1:tox_pass_key_length
 libtoxencryptsave.so.1:tox_pass_key_new
+libtoxencryptsave.so.1:tox_pass_salt_length
