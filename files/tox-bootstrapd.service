@@ -1,0 +1,14 @@
+[Unit]
+Description=Tox DHT Bootstrap Daemon
+After=network.target
+
+[Service]
+PIDFile=/var/run/tox-bootstrapd.pid
+WorkingDirectory=/var/lib/tox-bootstrapd
+ExecStart=/usr/bin/tox-bootstrapd --foreground --log-backend=stdout --config /etc/tox-bootstrapd.conf
+User=tox-bootstrapd
+Group=tox-bootstrapd
+#CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

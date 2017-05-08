@@ -1,6 +1,6 @@
 name       : toxcore
 version    : 0.1.8
-release    : 11
+release    : 12
 source     :
     - https://github.com/TokTok/c-toxcore/archive/v0.1.8.tar.gz : f8b44a54b775a4cb3b6f5efb37d5954bdc6f142c982169f1fad3300c6bf25639
 license    : GPL-3.0
@@ -8,15 +8,22 @@ component  : security.library
 summary    : toxcore is the core library for Tox communication clients.
 description: |
     toxcore is the core library for Tox communication clients.
+libsplit   : no
 builddeps  :
     - pkgconfig(libconfig)
     - pkgconfig(libsodium)
     - pkgconfig(opus)
     - pkgconfig(vpx)
-libsplit   : no
 setup      : |
-    %reconfigure --disable-static --enable-daemon
+    %cmake -DDHT_BOOTSTRAP=on -DBOOTSTRAP_DAEMON=on .
 build      : |
     %make
 install    : |
     %make_install
+    install -Dm00644 $pkgfiles/tox-bootstrapd.service $installdir/%libdir%/systemd/system/tox-bootstrapd.service
+    install -Dm00644 $pkgfiles/tox-bootstrapd.conf $installdir/etc/tox-bootstrapd.conf
+    install -Dm00644 $pkgfiles/tox-bootstrapd.sysusers $installdir/%libdir%/sysusers.d/tox-bootstrapd.conf
+    install -Dm00644 $pkgfiles/toxcore.tmpfiles $installdir/%libdir%/tmpfiles.d/tox-bootstrapd.conf
+    rm -rf $installdir/usr/lib/*.a
+check      : |
+    %make test

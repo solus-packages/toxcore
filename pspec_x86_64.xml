@@ -19,9 +19,13 @@
 </Description>
         <PartOf>security.library</PartOf>
         <Files>
+            <Path fileType="config">/etc/tox-bootstrapd.conf</Path>
             <Path fileType="executable">/usr/bin</Path>
-            <Path fileType="library">/usr/lib64/lib*.so</Path>
-            <Path fileType="library">/usr/lib64/lib*.so.*</Path>
+            <Path fileType="library">/usr/lib/lib*.so</Path>
+            <Path fileType="library">/usr/lib/lib*.so.*</Path>
+            <Path fileType="library">/usr/lib64/systemd/system/tox-bootstrapd.service</Path>
+            <Path fileType="library">/usr/lib64/sysusers.d/tox-bootstrapd.conf</Path>
+            <Path fileType="library">/usr/lib64/tmpfiles.d/tox-bootstrapd.conf</Path>
         </Files>
     </Package>
     <Package>
@@ -31,15 +35,15 @@
 </Description>
         <PartOf>programming.devel</PartOf>
         <RuntimeDependencies>
-            <Dependency release="11">toxcore</Dependency>
+            <Dependency release="12">toxcore</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include/</Path>
-            <Path fileType="data">/usr/lib64/pkgconfig/*.pc</Path>
+            <Path fileType="data">/usr/lib/pkgconfig/*.pc</Path>
         </Files>
     </Package>
     <History>
-        <Update release="11">
+        <Update release="12">
             <Date>2017-05-08</Date>
             <Version>0.1.8</Version>
             <Comment>Packaging update</Comment>
