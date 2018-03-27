@@ -1,6 +1,6 @@
 name       : toxcore
 version    : 0.1.8
-release    : 14
+release    : 15
 source     :
     - https://github.com/TokTok/c-toxcore/archive/v0.1.8.tar.gz : f8b44a54b775a4cb3b6f5efb37d5954bdc6f142c982169f1fad3300c6bf25639
 license    : GPL-3.0
