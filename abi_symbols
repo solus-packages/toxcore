@@ -98,6 +98,8 @@ libtoxcore.so.2:custom_lossy_packet_registerhandler
 libtoxcore.so.2:decrypt_data
 libtoxcore.so.2:decrypt_data_symmetric
 libtoxcore.so.2:del_groupchat
+libtoxcore.so.2:dht_friend_client
+libtoxcore.so.2:dht_friend_public_key
 libtoxcore.so.2:dht_get_close_client
 libtoxcore.so.2:dht_get_close_clientlist
 libtoxcore.so.2:dht_get_friend
@@ -366,6 +368,7 @@ libtoxcore.so.2:public_key_valid
 libtoxcore.so.2:randfriends_nodes
 libtoxcore.so.2:random_bytes
 libtoxcore.so.2:random_nonce
+libtoxcore.so.2:random_u08
 libtoxcore.so.2:random_u16
 libtoxcore.so.2:random_u32
 libtoxcore.so.2:random_u64
