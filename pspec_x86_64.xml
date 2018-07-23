@@ -23,7 +23,7 @@
             <Path fileType="executable">/usr/bin/tox-bootstrapd</Path>
             <Path fileType="library">/usr/lib64/libtoxcore.so</Path>
             <Path fileType="library">/usr/lib64/libtoxcore.so.2</Path>
-            <Path fileType="library">/usr/lib64/libtoxcore.so.2.3.0</Path>
+            <Path fileType="library">/usr/lib64/libtoxcore.so.2.4.0</Path>
             <Path fileType="library">/usr/lib64/systemd/system/tox-bootstrapd.service</Path>
             <Path fileType="library">/usr/lib64/sysusers.d/tox-bootstrapd.conf</Path>
             <Path fileType="library">/usr/lib64/tmpfiles.d/tox-bootstrapd.conf</Path>
@@ -36,7 +36,7 @@
 </Description>
         <PartOf>programming.devel</PartOf>
         <RuntimeDependencies>
-            <Dependency release="18">toxcore</Dependency>
+            <Dependency release="19">toxcore</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include/tox/tox.h</Path>
@@ -46,9 +46,9 @@
         </Files>
     </Package>
     <History>
-        <Update release="18">
-            <Date>2018-07-05</Date>
-            <Version>0.2.3</Version>
+        <Update release="19">
+            <Date>2018-07-23</Date>
+            <Version>0.2.4</Version>
             <Comment>Packaging update</Comment>
             <Name>Pierre-Yves</Name>
             <Email>pyu@riseup.net</Email>
