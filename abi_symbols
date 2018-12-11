@@ -49,8 +49,8 @@ libtoxcore.so.2:callback_groupchat_peer_new
 libtoxcore.so.2:callback_invite
 libtoxcore.so.2:callback_start
 libtoxcore.so.2:closelist_nodes
-libtoxcore.so.2:conference_by_uid
-libtoxcore.so.2:conference_get_uid
+libtoxcore.so.2:conference_by_id
+libtoxcore.so.2:conference_get_id
 libtoxcore.so.2:connection_data_handler
 libtoxcore.so.2:connection_lossy_data_handler
 libtoxcore.so.2:connection_status_handler
@@ -78,7 +78,6 @@ libtoxcore.so.2:crypto_sha256
 libtoxcore.so.2:crypto_sha512
 libtoxcore.so.2:cryptopacket_registerhandler
 libtoxcore.so.2:cryptpacket_received
-libtoxcore.so.2:current_time_actual
 libtoxcore.so.2:current_time_monotonic
 libtoxcore.so.2:custom_lossless_packet_registerhandler
 libtoxcore.so.2:custom_lossy_packet_registerhandler
@@ -138,6 +137,7 @@ libtoxcore.so.2:friendconn_net_crypto
 libtoxcore.so.2:friendreq_init
 libtoxcore.so.2:friendreq_kill
 libtoxcore.so.2:friendreq_new
+libtoxcore.so.2:g_callback_group_connected
 libtoxcore.so.2:g_callback_group_invite
 libtoxcore.so.2:g_callback_group_message
 libtoxcore.so.2:g_callback_group_title
@@ -183,6 +183,7 @@ libtoxcore.so.2:handle_push
 libtoxcore.so.2:handle_request
 libtoxcore.so.2:host_to_lendian32
 libtoxcore.so.2:host_to_net
+libtoxcore.so.2:host_tolendian16
 libtoxcore.so.2:id_closest
 libtoxcore.so.2:id_copy
 libtoxcore.so.2:id_equal
@@ -203,7 +204,6 @@ libtoxcore.so.2:ipport_copy
 libtoxcore.so.2:ipport_equal
 libtoxcore.so.2:ipport_isset
 libtoxcore.so.2:ipv6_ipv4_in_v6
-libtoxcore.so.2:is_timeout
 libtoxcore.so.2:join_av_groupchat
 libtoxcore.so.2:join_groupchat
 libtoxcore.so.2:kill_TCP_connection
@@ -240,7 +240,6 @@ libtoxcore.so.2:m_callback_connectionstatus_internal_av
 libtoxcore.so.2:m_callback_core_connection
 libtoxcore.so.2:m_callback_friendmessage
 libtoxcore.so.2:m_callback_friendrequest
-libtoxcore.so.2:m_callback_log
 libtoxcore.so.2:m_callback_msi_packet
 libtoxcore.so.2:m_callback_namechange
 libtoxcore.so.2:m_callback_read_receipt
@@ -262,6 +261,7 @@ libtoxcore.so.2:m_get_self_userstatus
 libtoxcore.so.2:m_get_statusmessage_size
 libtoxcore.so.2:m_get_userstatus
 libtoxcore.so.2:m_msi_packet
+libtoxcore.so.2:m_register_state_plugin
 libtoxcore.so.2:m_send_custom_lossy_packet
 libtoxcore.so.2:m_send_message_generic
 libtoxcore.so.2:m_set_statusmessage
@@ -273,12 +273,14 @@ libtoxcore.so.2:messenger_load
 libtoxcore.so.2:messenger_run_interval
 libtoxcore.so.2:messenger_save
 libtoxcore.so.2:messenger_size
+libtoxcore.so.2:min_s32
 libtoxcore.so.2:min_u32
 libtoxcore.so.2:min_u64
 libtoxcore.so.2:mono_time_free
 libtoxcore.so.2:mono_time_get
 libtoxcore.so.2:mono_time_is_timeout
 libtoxcore.so.2:mono_time_new
+libtoxcore.so.2:mono_time_set_current_time_callback
 libtoxcore.so.2:mono_time_update
 libtoxcore.so.2:msg_init
 libtoxcore.so.2:msg_parse_header_out
@@ -464,6 +466,7 @@ libtoxcore.so.2:setfriendname
 libtoxcore.so.2:setname
 libtoxcore.so.2:sock_valid
 libtoxcore.so.2:state_load
+libtoxcore.so.2:state_write_section_header
 libtoxcore.so.2:tcp_con_custom_object
 libtoxcore.so.2:tcp_con_custom_uint
 libtoxcore.so.2:tcp_con_ip_port
@@ -481,6 +484,7 @@ libtoxcore.so.2:tcp_server_public_key
 libtoxcore.so.2:tox_add_tcp_relay
 libtoxcore.so.2:tox_address_size
 libtoxcore.so.2:tox_bootstrap
+libtoxcore.so.2:tox_callback_conference_connected
 libtoxcore.so.2:tox_callback_conference_invite
 libtoxcore.so.2:tox_callback_conference_message
 libtoxcore.so.2:tox_callback_conference_peer_list_changed
@@ -501,10 +505,12 @@ libtoxcore.so.2:tox_callback_friend_status
 libtoxcore.so.2:tox_callback_friend_status_message
 libtoxcore.so.2:tox_callback_friend_typing
 libtoxcore.so.2:tox_callback_self_connection_status
+libtoxcore.so.2:tox_conference_by_id
 libtoxcore.so.2:tox_conference_by_uid
 libtoxcore.so.2:tox_conference_delete
 libtoxcore.so.2:tox_conference_get_chatlist
 libtoxcore.so.2:tox_conference_get_chatlist_size
+libtoxcore.so.2:tox_conference_get_id
 libtoxcore.so.2:tox_conference_get_title
 libtoxcore.so.2:tox_conference_get_title_size
 libtoxcore.so.2:tox_conference_get_type
@@ -650,8 +656,6 @@ libtoxcore.so.2:toxav_kill
 libtoxcore.so.2:toxav_new
 libtoxcore.so.2:toxav_video_send_frame
 libtoxcore.so.2:toxav_video_set_bit_rate
-libtoxcore.so.2:unix_time
-libtoxcore.so.2:unix_time_update
 libtoxcore.so.2:unpack_ip_port
 libtoxcore.so.2:unpack_nodes
 libtoxcore.so.2:vc_iterate
@@ -660,4 +664,5 @@ libtoxcore.so.2:vc_new
 libtoxcore.so.2:vc_queue_message
 libtoxcore.so.2:vc_reconfigure_encoder
 libtoxcore.so.2:video_bit_rate_invalid
+libtoxcore.so.2:wipe_priority_list
 libtoxcore.so.2:write_cryptpacket
